@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/orders")
+@RequestMapping("api/orders")
 public class OrderController {
 
     private final OrderRepository orderRepository;
@@ -17,7 +17,7 @@ public class OrderController {
         this.orderRepository = orderRepository;
     }
 
-    @GetMapping("/")
+    @GetMapping
     public List<Order> getAllOrders() {
         return orderRepository.findAll();
     }
@@ -28,7 +28,7 @@ public class OrderController {
                 .orElseThrow(() -> new OrderNotFoundException(id));
     }
 
-    @PostMapping("/")
+    @PostMapping
     public Order createOrder(@RequestBody Order order) {
         return orderRepository.save(order);
     }

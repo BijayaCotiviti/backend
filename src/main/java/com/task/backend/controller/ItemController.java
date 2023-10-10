@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("items")
+@RequestMapping("/api/items")
 public class ItemController {
 
     private final ItemService itemService;
@@ -18,7 +18,7 @@ public class ItemController {
         this.itemService = itemService;
     }
 
-    @GetMapping("/")
+    @GetMapping
     public List<Item> getAllItems() {
         return itemService.getAllItems();
     }
@@ -28,7 +28,7 @@ public class ItemController {
         return itemService.getItemById(id);
     }
 
-    @PostMapping("/")
+    @PostMapping
     public Item createItem(@RequestBody Item item) {
         return itemService.createItem(item);
     }

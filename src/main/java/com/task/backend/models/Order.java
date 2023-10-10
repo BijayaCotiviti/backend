@@ -23,15 +23,14 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "customer_id", nullable = false)
-    private User user;
+//    @ManyToOne
+//    @JoinColumn(name = "customer_id", nullable = false)
+    private String username;
 
 //    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
 //    private List<Item> orderItems;
 
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "order_date", nullable = false)
+
     private Date orderDate;
 
     @Enumerated(EnumType.STRING)

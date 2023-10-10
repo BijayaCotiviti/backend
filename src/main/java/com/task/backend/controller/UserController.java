@@ -63,6 +63,7 @@ import java.util.Collections;
             User user = new User();
             user.setName(signUpDto.getName());
             user.setEmail(signUpDto.getEmail());
+            user.setUsername(signUpDto.getUsername());
             user.setPassword(
             signUpDto.getPassword()
 //                    passwordEncoder.encode(signUpDto.getPassword())

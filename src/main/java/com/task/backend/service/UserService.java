@@ -32,6 +32,7 @@ public class UserService {
         User user = new User();
         user.setName(userDto.getFirstName() + " " + userDto.getLastName());
         user.setEmail(userDto.getEmail());
+        user.setUsername(userDto.getUsername());
         // encrypt the password using spring security
         user.setPassword(userDto.getPassword()
 //                passwordEncoder.encode(userDto.getPassword())

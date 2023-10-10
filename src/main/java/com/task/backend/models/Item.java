@@ -32,12 +32,21 @@ public class Item {
     @Column(name = "price", nullable = false)
     private Double price;
 
-    @Column(name = "stock_quantity", nullable = false)
-    private Integer stockQuantity;
+    private String productUrl;
+
+//    @Column(name = "stock_quantity", nullable = false)
+//    private Integer stockQuantity;
 
 //    @ManyToOne
 //    @JoinColumn(name = "order_id")
 //    private Order order;
+
+    public Item(String name, String description, Double price, String productUrl) {
+        this.name = name;
+        this.description = description;
+        this.price = price;
+        this.productUrl = productUrl;
+    }
 
     @Override
     public boolean equals(Object o) {
